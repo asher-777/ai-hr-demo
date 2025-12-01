@@ -82,7 +82,7 @@ with st.expander("📄 第一步：简历上传与评估 (Resume Analysis)", exp
                         with st.spinner("Gemini 正在极速分析中..."):
                             # 初始化 Gemini 模型
                             llm = ChatGoogleGenerativeAI(
-                                model="gemini-1.5-flash",
+                                model="gemini-1.5-flash-latest",
                                 temperature=0.2, # 低温度，保证评分严谨
                                 convert_system_message_to_human=True # 兼容性设置
                             )
@@ -138,7 +138,7 @@ if user_input := st.chat_input("请输入你的回答 (支持中英文)..."):
             try:
                 # 初始化聊天模型 (稍微提高温度，增加对话灵活性)
                 chat_llm = ChatGoogleGenerativeAI(
-                    model="gemini-1.5-flash",
+                    model="gemini-1.5-flash-latest",
                     temperature=0.6,
                     convert_system_message_to_human=True
                 )
@@ -194,4 +194,5 @@ if user_input := st.chat_input("请输入你的回答 (支持中英文)..."):
                 
             except Exception as e:
                 st.error(f"AI 响应错误: {e}")
+
 
