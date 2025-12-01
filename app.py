@@ -1,8 +1,8 @@
 import streamlit as st
 import os
 from PyPDF2 import PdfReader
-from langchain_community.chat_models import ChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage, SystemMessage
 
 # 页面配置
 st.set_page_config(page_title="AI 招聘智能体", page_icon="🤖")
@@ -104,4 +104,5 @@ if user_input := st.chat_input("输入你的回答..."):
             # 3. 显示 AI 回复
             st.session_state.messages.append({"role": "assistant", "content": ai_reply})
             st.chat_message("assistant").write(ai_reply)
+
 
