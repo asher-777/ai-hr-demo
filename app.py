@@ -186,4 +186,12 @@ if user_input := st.chat_input("请输入你的回答 (支持中英文)..."):
                 
                 # AI 回复上屏
                 st.session_state.messages.append({"role": "assistant", "content": ai_response.content})
-                st.chat_message("assistant").write(ai_respons
+                ai_response = chat_llm.invoke([HumanMessage(content=full_conversation)])
+                
+                # AI 回复上屏
+                st.session_state.messages.append({"role": "assistant", "content": ai_response.content})
+                st.chat_message("assistant").write(ai_response.content)
+                
+            except Exception as e:
+                st.error(f"AI 响应错误: {e}")
+
