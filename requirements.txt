@@ -1,8 +1,12 @@
 streamlit
-langchain
-langchain-community
-langchain-google-genai
+# 强制使用最新版，修复 pydantic_v1 错误
+langchain-google-genai>=2.0.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+# Google 依赖
 google-generativeai
+# 其他工具
 pdfplumber
 faiss-cpu
 tiktoken
