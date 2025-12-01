@@ -1,9 +1,9 @@
 streamlit
-openai
 langchain
 langchain-community
 langchain-core
-langchain-openai
+langchain-google-genai
+google-generativeai
 pdfplumber
-tiktoken
 faiss-cpu
+tiktoken
